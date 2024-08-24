@@ -103,7 +103,17 @@ form input[type='submit']{
     flex-direction: column;
 }
 
+.equipamentos .listagem li:first-child{
+    font-size: 1.8rem;
+    font-weight: 600;
+    
+    margin-bottom: 2rem;
+}
+
 .equipamentos .listagem li{
     display: flex;
     justify-content: space-between;
+
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
 }
