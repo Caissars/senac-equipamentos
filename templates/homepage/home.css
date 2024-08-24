@@ -32,9 +32,11 @@ form input[type='submit']{
     background-color: #27699f;
 }
 
-h1{
+.professor-info h1{
     text-align: center;
     margin: 10% auto;
+    font-weight: 100;
+    font-family: sans-serif;
 }
 
 .professor-info .info, .info input{
