@@ -11,6 +11,11 @@ form{
     flex-direction: row;
 }
 
+form input[type='submit']{
+    width: 10rem;
+    height: 2.5rem;
+}
+
 .professor-info .info input, label{
     display: block;
 }
