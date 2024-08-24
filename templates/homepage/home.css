@@ -72,6 +72,22 @@ form input[type='submit']{
     color: white;
 }
 
+/* removendo botões nativos de incremento e decremento */
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* fim */
+
 .professor-info .info label{
     font-size: 1.3rem;
     margin-bottom: .2rem;
@@ -94,6 +110,16 @@ form input[type='submit']{
 
 .equipamentos li{
     list-style-type: none;
+}
+
+.equipamentos li input{
+    width: 1rem;
+    border: none;
+    font-size: 1.5rem;
+}
+
+.equipamentos li input:focus{
+   outline: none;
 }
 
 .equipamentos h1{
