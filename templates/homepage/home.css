@@ -4,6 +4,11 @@ html, body{
     box-sizing: border-box;
 }
 
+form{
+    display: flex;
+    flex-direction: row;
+}
+
 .professor-info .info input, label{
     display: block;
 }
