@@ -20,6 +20,50 @@ form input[type='submit']{
     bottom: 5vh;
 }
 
+.professor-info{
+    height: 100%;
+    width: 30%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    color: white;
+    background-color: #27699f;
+}
+
+h1{
+    text-align: center;
+    margin: 10% auto;
+}
+
+.professor-info .info, .info input{
+    width: 90%;
+}
+
+.professor-info .info{
+    margin-bottom: 4%;
+}
+
+.professor-info .info input{
+    background-color: inherit;
+    border: 1px solid white;
+    border-radius: 8px;
+
+    padding: .5rem;
+
+    color: white;
+}
+
+.professor-info .info label{
+    font-size: 1.3rem;
+    margin-bottom: .2rem;
+}
+
+.professor-info .info input:focus{
+    outline: none;
+}
+
 .professor-info .info input, label{
     display: block;
 }
