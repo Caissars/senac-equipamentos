@@ -12,12 +12,22 @@ form{
 }
 
 form input[type='submit']{
-    width: 10rem;
-    height: 2.5rem;
+    width: 16rem;
+    height: 2.9rem;
+
+    font-size: 1.4rem;
+    font-weight: 600;
 
     position: fixed;
-    right: 20vw;
+    right: 8vw;
     bottom: 5vh;
+
+    background-color: #27699f;
+    border: none;
+    color: white;
+    border-radius: 2rem;
+
+    cursor: pointer;
 }
 
 .professor-info{
