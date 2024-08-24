@@ -80,3 +80,9 @@ form input[type='submit']{
 .equipamentos li{
     list-style-type: none;
 }
+
+.equipamentos h1{
+    color: #27699f;
+    font-family: sans-serif;
+    font-weight: 600;
+}
