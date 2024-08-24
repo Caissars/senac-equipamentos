@@ -70,6 +70,13 @@ form input[type='submit']{
     display: block;
 }
 
+.equipamentos{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .equipamentos li{
     list-style-type: none;
 }
