@@ -69,3 +69,7 @@ form input[type='submit']{
 .professor-info .info input, label{
     display: block;
 }
+
+.equipamentos li{
+    list-style-type: none;
+}
