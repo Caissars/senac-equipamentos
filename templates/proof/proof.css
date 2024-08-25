@@ -6,11 +6,27 @@ html, body{
     margin: 0;
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
+
+    display: flex;
+    flex-direction: column;
+    margin-top: 4%;
+    align-items: center;
 }
 
 table {
+    width: 50vw;
     border-collapse: collapse;
-    width: 100%;
+
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+table .title{
+    text-align: center;
+}
+
+table .qtd{
+    text-align: center;
 }
 
 th, td {
