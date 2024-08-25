@@ -9,12 +9,13 @@ html, body{
 
     display: flex;
     flex-direction: column;
-    margin-top: 4%;
+    margin-top: 2%;
     align-items: center;
 }
 
 table {
-    width: 50vw;
+    width: 40vw;
+    height: 60vh;
     border-collapse: collapse;
 
     font-size: 1.5rem;
