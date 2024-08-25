@@ -5,41 +5,125 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SENAC</title>
-    <link rel="stylesheet" href="{% static '/home.css' %}">
+    <link rel="stylesheet" href="{% static 'home.css' %}">
 </head>
 <body>
-    <form action="" method="post">{% csrf_token %}
+    <form action="{% url 'criar_agendamento' %}" method="post">{% csrf_token %}
         <div class="professor-info">
             <h1>Dados Cadastrais</h1>
             <div class="info">
-                <label for="nome_professor">Nome do professor:</label>
-                <input type="text" autocomplete="name" name="nome_professor" required>
+                <label for="prof_instrutor">Nome do Professor:</label>
+                <input type="text" autocomplete="name" name="prof_instrutor" required>
             </div>
 
             <div class="info">
                 <label for="turno">Turno:</label>
-                <input type="text" autocomplete="name" name="turno" required>
+                <input type="text" name="turno" required>
             </div>
 
             <div class="info">
                 <label for="sala">Sala de Aula:</label>
-                <input type="text" autocomplete="name" name="sala" required>
+                <input type="text" name="sala" required>
             </div>
 
             <div class="info">
                 <label for="data">Data:</label>
-                <input type="date" name="data" name="data" id="data" required>
+                <input type="date" name="data" id="data" required>
             </div>
         </div>
+
         <div class="equipamentos">
-            <h1>AGENDAMENTO DE EQUIPAMENTOS</h1>
+            <h1>Agendamento de Equipamentos</h1>
             <ul class="listagem">
-                <li class="titulo"><span>Equipamentos</span> <span>Quantidade</span></li>
-                <li><span>nome-equipamento</span> <span><span class="change_value" onclick="incrementValue()">+</span><input type="number" id="tool" min="0" name="qtd" readonly value="0"><span onclick="decrementValue()" class="change_value">-</span></span></li>
+                <li class="titulo"><span>Equipamento</span> <span>Quantidade</span></li>
+                
+                <li>
+                    <span>Notebook</span>
+                    <span>
+                        <button type="button" onclick="decrementValue('notebook')">-</button>
+                        <input type="number" id="notebook" name="notebook" min="0" value="0" readonly>
+                        <button type="button" onclick="incrementValue('notebook')">+</button>
+                    </span>
+                </li>
+
+                <li>
+                    <span>Projetor</span>
+                    <span>
+                        <button type="button" onclick="decrementValue('projetor')">-</button>
+                        <input type="number" id="projetor" name="projetor" min="0" value="0" readonly>
+                        <button type="button" onclick="incrementValue('projetor')">+</button>
+                    </span>
+                </li>
+
+                <li>
+                    <span>Câmera Fotográfica</span>
+                    <span>
+                        <button type="button" onclick="decrementValue('camera_fotografica')">-</button>
+                        <input type="number" id="camera_fotografica" name="camera_fotografica" min="0" value="0" readonly>
+                        <button type="button" onclick="incrementValue('camera_fotografica')">+</button>
+                    </span>
+                </li>
+
+                <li>
+                    <span>Tripé de Câmera</span>
+                    <span>
+                        <button type="button" onclick="decrementValue('tripe_camera')">-</button>
+                        <input type="number" id="tripe_camera" name="tripe_camera" min="0" value="0" readonly>
+                        <button type="button" onclick="incrementValue('tripe_camera')">+</button>
+                    </span>
+                </li>
+
+                <li>
+                    <span>Fonte de Caixa de Som</span>
+                    <span>
+                        <button type="button" onclick="decrementValue('font_caix_som')">-</button>
+                        <input type="number" id="font_caix_som" name="font_caix_som" min="0" value="0" readonly>
+                        <button type="button" onclick="incrementValue('font_caix_som')">+</button>
+                    </span>
+                </li>
+
+                <li>
+                    <span>Microfone</span>
+                    <span>
+                        <button type="button" onclick="decrementValue('microfone')">-</button>
+                        <input type="number" id="microfone" name="microfone" min="0" value="0" readonly>
+                        <button type="button" onclick="incrementValue('microfone')">+</button>
+                    </span>
+                </li>
+
+                <li>
+                    <span>Caneta/Lousa Interativa</span>
+                    <span>
+                        <button type="button" onclick="decrementValue('caneta_lousa_interativa')">-</button>
+                        <input type="number" id="caneta_lousa_interativa" name="caneta_lousa_interativa" min="0" value="0" readonly>
+                        <button type="button" onclick="incrementValue('caneta_lousa_interativa')">+</button>
+                    </span>
+                </li>
+
+                <li>
+                    <span>Controle de TV</span>
+                    <span>
+                        <button type="button" onclick="decrementValue('controle_tv')">-</button>
+                        <input type="number" id="controle_tv" name="controle_tv" min="0" value="0" readonly>
+                        <button type="button" onclick="incrementValue('controle_tv')">+</button>
+                    </span>
+                </li>
+
+                <li>
+                    <span>Controle de Projetor</span>
+                    <span>
+                        <button type="button" onclick="decrementValue('controle_projetor')">-</button>
+                        <input type="number" id="controle_projetor" name="controle_projetor" min="0" value="0" readonly>
+                        <button type="button" onclick="incrementValue('controle_projetor')">+</button>
+                    </span>
+                </li>
+
             </ul>
         </div>
-        <input type="submit" value="Gerar comprovante">
+
+        <input type="submit" value="Gerar Comprovante">
     </form>
-    <script src="{% static '/main.js' %}"></script>
+
+    <script src="{% static 'main.js' %}"></script>
 </body>
 </html>
