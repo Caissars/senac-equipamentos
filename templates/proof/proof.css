@@ -9,8 +9,16 @@ html, body{
 
     display: flex;
     flex-direction: column;
-    margin-top: 2%;
     align-items: center;
+}
+
+h1{
+    width: 80%;
+    text-align: center;
+    font-size: 2rem;
+
+    margin-top: 8%;
+    color: #1C68A0;
 }
 
 table {
