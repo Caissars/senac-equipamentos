@@ -3,7 +3,7 @@ from django.db import models
 class Equipamentos(models.Model):
     notebook = models.IntegerField()
     projetor = models.IntegerField()
-    camera_fotorgrafica = models.IntegerField()
+    camera_fotografica = models.IntegerField()
     tripe_camera = models.IntegerField()
     font_caix_som = models.IntegerField()
     microfone = models.IntegerField()
