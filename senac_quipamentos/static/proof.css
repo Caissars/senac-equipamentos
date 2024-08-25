@@ -1,41 +1,50 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
-
-html, body{
+html, body {
     height: 100%;
     margin: 0;
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
-
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 1rem;
 }
 
-h1{
-    width: 80%;
+header, footer {
+    width: 100%;
     text-align: center;
+    margin-bottom: 1rem;
+}
+
+h1 {
     font-size: 2.1rem;
     font-weight: 800;
-
-    margin-top: 8%;
     color: #1C68A0;
 }
 
+section.info {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+section.info p {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+
 table {
-    width: 40vw;
-    height: 60vh;
+    width: 100%;
     border-collapse: collapse;
-
-    font-size: 1.5rem;
-    font-weight: 400;
+    font-size: 1.2rem;
 }
 
-table .title{
+table .title {
     text-align: center;
+    background-color: #f2f2f2;
 }
 
-table .qtd{
+table .qtd {
     text-align: center;
 }
 
@@ -45,25 +54,14 @@ th, td {
     border: 1px solid #ddd;
 }
 
-th {
-    background-color: #f2f2f2;
-}
-
-button{
+footer button {
     width: 16rem;
     height: 2.9rem;
-
     font-size: 1.4rem;
     font-weight: 800;
-
-    position: fixed;
-    right: 8vw;
-    bottom: 5vh;
-
     background-color: #27699f;
     border: none;
     color: white;
     border-radius: 2rem;
-
     cursor: pointer;
 }
