@@ -64,5 +64,10 @@
         {% csrf_token %}
         <button type="submit">Gerar Comprovante em PDF</button>
     </form>
+
+    <form action="{% url 'confirmar_comprovante' agendamento_id=agendamento_id %}" method="post" style="margin-top: 20px;">
+        {% csrf_token %}
+        <button type="submit" name="cancelar">Cancelar</button>
+    </form>
 </body>
 </html>

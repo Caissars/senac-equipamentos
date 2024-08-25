@@ -82,6 +82,13 @@ def confirmar_comprovante(request, agendamento_id):
     agendamento = get_object_or_404(Agendamento, pk=agendamento_id)
     equipamentos = agendamento.equipamentos
 
+    if request.method == 'POST':
+        if 'cancelar' in request.POST:
+            # Excluir o agendamento e os equipamentos associados
+            agendamento.delete()
+            # Redirecionar para uma página de sucesso ou a página inicial
+            return redirect('home') 
+
     context = {
         'agendamento': agendamento,
         'equipamentos': equipamentos,
