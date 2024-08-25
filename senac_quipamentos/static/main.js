@@ -1,10 +1,13 @@
-function decrementValue() {
-    if (document.getElementById("tool").value < 1) {
-        return
+// Função para decrementar valor
+function decrementValue(inputId) {
+    const input = document.getElementById(inputId);
+    if (input.value > 0) {
+        input.value--;
     }
-    document.getElementById("tool").value--;
 }
 
-function incrementValue(){
-    document.getElementById("tool").value++;
+// Função para incrementar valor
+function incrementValue(inputId) {
+    const input = document.getElementById(inputId);
+    input.value++;
 }

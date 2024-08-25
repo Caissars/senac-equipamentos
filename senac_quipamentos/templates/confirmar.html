@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmar Comprovante</title>
+    <link rel="stylesheet" href="{% static 'proof.css' %}">
+</head>
+<body>
+    <h1>Comprovante de Agendamento de Equipamentos</h1>
+
+    <div class="info">
+        <p><strong>Professor:</strong> {{ agendamento.prof_instrutor }}</p>
+        <p><strong>Sala:</strong> {{ agendamento.sala }}</p>
+        <p><strong>Turno:</strong> {{ agendamento.turno }}</p>
+        <p><strong>Data:</strong> {{ agendamento.data }}</p>
+    </div>
+
+    <table>
+        <tr>
+            <th>Equipamento</th>
+            <th>Quantidade</th>
+        </tr>
+        <tr>
+            <td>Notebook</td>
+            <td>{{ equipamentos.notebook }}</td>
+        </tr>
+        <tr>
+            <td>Projetor</td>
+            <td>{{ equipamentos.projetor }}</td>
+        </tr>
+        <tr>
+            <td>Câmera Fotográfica</td>
+            <td>{{ equipamentos.camera_fotografica }}</td>
+        </tr>
+        <tr>
+            <td>Tripé de Câmera</td>
+            <td>{{ equipamentos.tripe_camera }}</td>
+        </tr>
+        <tr>
+            <td>Fonte Caixa de Som</td>
+            <td>{{ equipamentos.font_caix_som }}</td>
+        </tr>
+        <tr>
+            <td>Microfone</td>
+            <td>{{ equipamentos.microfone }}</td>
+        </tr>
+        <tr>
+            <td>Caneta/Lousa Interativa</td>
+            <td>{{ equipamentos.caneta_lousa_interativa }}</td>
+        </tr>
+        <tr>
+            <td>Controle de TV</td>
+            <td>{{ equipamentos.controle_tv }}</td>
+        </tr>
+        <tr>
+            <td>Controle do Projetor</td>
+            <td>{{ equipamentos.controle_projetor }}</td>
+        </tr>
+    </table>
+
+    <form action="{% url 'gerar_comprovante' agendamento_id=agendamento_id %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Gerar Comprovante em PDF</button>
+    </form>
+
+    <form action="{% url 'confirmar_comprovante' agendamento_id=agendamento_id %}" method="post" style="margin-top: 20px;">
+        {% csrf_token %}
+        <button type="submit" name="cancelar">Cancelar</button>
+    </form>
+</body>
+</html>
