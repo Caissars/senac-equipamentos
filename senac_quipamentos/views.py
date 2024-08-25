@@ -50,4 +50,4 @@ def criar_agendamento(request):
         # Redirecionar para a página de geração do comprovante em PDF
         return redirect('gerar_comprovante', agendamento_id=agendamento.pk)
 
-    return render(request, 'comprovante.html')
+    return render(request, 'home.html')
