@@ -20,5 +20,6 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.criar_agendamento, name='home'),
+    path('comprovante/<int:agendamento_id>/', views.gerar_comprovante, name='gerar_comprovante'),
 
 ]

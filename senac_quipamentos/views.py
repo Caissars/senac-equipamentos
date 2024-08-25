@@ -51,3 +51,28 @@ def criar_agendamento(request):
         return redirect('gerar_comprovante', agendamento_id=agendamento.pk)
 
     return render(request, 'home.html')
+
+def gerar_comprovante(request, agendamento_id):
+    try:
+        # Buscar o agendamento com base no ID passado na URL
+        agendamento = Agendamento.objects.get(pk=agendamento_id)
+    except Agendamento.DoesNotExist:
+        return HttpResponse("Agendamento não encontrado", status=404)
+    
+    equipamentos = agendamento.equipamentos
+
+    # Renderizar o HTML para o PDF
+    html_string = render_to_string('comprovante.html', {
+        'agendamento': agendamento,
+        'equipamentos': equipamentos
+    })
+
+    # Converter para PDF usando WeasyPrint
+    html = HTML(string=html_string, base_url=request.build_absolute_uri())
+    pdf = html.write_pdf()
+
+    # Retornar o PDF como resposta
+    response = HttpResponse(pdf, content_type='application/pdf')
+    response['Content-Disposition'] = 'inline; filename="comprovante.pdf"'
+    
+    return response
