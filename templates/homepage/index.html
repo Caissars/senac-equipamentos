@@ -34,10 +34,11 @@
             <h1>AGENDAMENTO DE EQUIPAMENTOS</h1>
             <ul class="listagem">
                 <li class="titulo"><span>Equipamentos</span> <span>Quantidade</span></li>
-                <li><span>nome-equipamento</span> <span><span>+</span><input type="number" name="qtd" readonly value="0"><span>-</span></span></li>
+                <li><span>nome-equipamento</span> <span><span class="change_value" onclick="incrementValue()">+</span><input type="number" id="tool" min="0" name="qtd" readonly value="0"><span onclick="decrementValue()" class="change_value">-</span></span></li>
             </ul>
         </div>
         <input type="submit" value="Gerar comprovante">
     </form>
+    <script src="main.js"></script>
 </body>
 </html>
