@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.template.loader import render_to_string
 from weasyprint import HTML
 from lista.models import Agendamento, Equipamentos
+from django.shortcuts import render, get_object_or_404
 def Homepage(request):
         return render(request, 'home.html', {})
 def proof(request):
@@ -48,7 +49,7 @@ def criar_agendamento(request):
         )
 
         # Redirecionar para a página de geração do comprovante em PDF
-        return redirect('gerar_comprovante', agendamento_id=agendamento.pk)
+        return redirect('confirmar_comprovante', agendamento_id=agendamento.pk)
 
     return render(request, 'home.html')
 
@@ -76,3 +77,15 @@ def gerar_comprovante(request, agendamento_id):
     response['Content-Disposition'] = 'inline; filename="comprovante.pdf"'
     
     return response
+
+def confirmar_comprovante(request, agendamento_id):
+    agendamento = get_object_or_404(Agendamento, pk=agendamento_id)
+    equipamentos = agendamento.equipamentos
+
+    context = {
+        'agendamento': agendamento,
+        'equipamentos': equipamentos,
+        'agendamento_id': agendamento_id
+    }
+
+    return render(request, 'confirmar.html', context)
