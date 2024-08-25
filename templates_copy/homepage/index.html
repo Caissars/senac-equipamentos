@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SENAC</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <form action="" method="post">
+        <div class="professor-info">
+            <h1>Dados Cadastrais</h1>
+            <div class="info">
+                <label for="nome_professor">Nome do professor:</label>
+                <input type="text" autocomplete="name" name="nome_professor" required>
+            </div>
+
+            <div class="info">
+                <label for="turno">Turno:</label>
+                <input type="text" autocomplete="name" name="turno" required>
+            </div>
+
+            <div class="info">
+                <label for="sala">Sala de Aula:</label>
+                <input type="text" autocomplete="name" name="sala" required>
+            </div>
+
+            <div class="info">
+                <label for="data">Data:</label>
+                <input type="date" name="data" name="data" id="data" required>
+            </div>
+        </div>
+        <div class="equipamentos">
+            <h1>AGENDAMENTO DE EQUIPAMENTOS</h1>
+            <ul class="listagem">
+                <li class="titulo"><span>Equipamentos</span> <span>Quantidade</span></li>
+                <li><span>nome-equipamento</span> <span><span class="change_value" onclick="incrementValue()">+</span><input type="number" id="tool" min="0" name="qtd" readonly value="0"><span onclick="decrementValue()" class="change_value">-</span></span></li>
+            </ul>
+        </div>
+        <input type="submit" value="Gerar comprovante">
+    </form>
+    <script src="static/main.js"></script>
+</body>
+</html>
