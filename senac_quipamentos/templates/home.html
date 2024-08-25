@@ -1,13 +1,14 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SENAC</title>
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="{% static '/home.css' %}">
 </head>
 <body>
-    <form action="" method="post">
+    <form action="" method="post">{% csrf_token %}
         <div class="professor-info">
             <h1>Dados Cadastrais</h1>
             <div class="info">
@@ -39,6 +40,6 @@
         </div>
         <input type="submit" value="Gerar comprovante">
     </form>
-    <script src="main.js"></script>
+    <script src="{% static '/main.js' %}"></script>
 </body>
 </html>

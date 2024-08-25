@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Meus apps
     'lista',
+    'senac_quipamentos'
 ]
 
 MIDDLEWARE = [
