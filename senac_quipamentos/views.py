@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+
 def Homepage(request):
-        return render(request, 'home.html', {})
-def proof(request):
-        return render(request, 'equipments.html', {})
+    if request.method == 'POST':
+        return render(request, 'equipments.html')  # Assuming 'home.html' is a template name
+    return render(request,'home.html')
