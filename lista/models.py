@@ -7,6 +7,7 @@ class Agendamento(models.Model):
     data = models.DateField()
 
 class Equipamentos(models.Model):
+    agendamento = models.OneToOneField(Agendamento, related_name="agendamento", on_delete=models.CASCADE, primary_key=True)
     notebook = models.IntegerField()
     projetor = models.IntegerField()
     camera_fotorgrafica = models.IntegerField()
